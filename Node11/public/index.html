@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 style="margin: 0; padding: 2%; background-color: rgb(253, 23, 11);color: rgb(247, 248, 250); text-align: center;">Proyecto 1 Node.js <br> BLAS ALONSO BARBOSA LOPEZ</h1>
+        <h4 style="margin: 0; padding: 0%; text-align: justify; padding: 1%; background-color: rgb(5, 110, 248); color: aliceblue;">Semana 1:
+    
+            Temas: <hr>
+        
+            Express <br>
+            Routers <br>
+            Sequelize <br>
+            Modelos <hr>
+        
+        “Trabajamos en una empresa que se encarga de la reparación de computadoras, donde el usuario puede agendar una cita para que pueda dejar su equipo de cómputo, y el personal de la empresa actualizara cuando este listo el equipo del cliente.
+        La empresa nos contrato como desarrolladores de backend para crear una API que sea capaz de poder agendar citas para los usuarios, y que los empleados puedan actualizar cuando los equipos ya estén listos para que los recojan”
+        
+           <br> Inicializar un proyecto con npm (para poder instalar paqueterías)
+            Instalar express y nodemon (la ultima como dependencia de desarrollo)
+            Crear un servidor de express, corriendo en el puerto de su gusto
+            Conectarse a su base de datos en PostgreSQL <br>
+                Crear los siguientes modelos basados en el siguiente diagrama: <br>
+                Para el status del modelo user, asignar como valor default available. <br>
+                Para el status del modelo repairs, asignar como valor default pending. <hr>
+        
+        
+        Definir los siguientes endpoints 
+                                /api/v1/users <br>
+        HTTP VERB
+        URL
+        Descripción
+        GET
+        /
+        Obtener la lista de los usuarios en la base de datos
+        GET
+        /:id
+        Obtener un solo usuario dado un id
+        POST
+        /
+        Crear un nuevo usuario, se debe proporcionar por el req.body (name, email, password, role), el role (rol) puede ser client o employee
+        PATCH
+        /:id
+        Actualizar los datos de un usuario dado un id, solo puede actualizar su name y email
+        DELETE
+        /:id
+        Deshabilitar la cuenta de un usuario
+        
+        Para los endpoints con /:id, se debe validar que el usuario exista, en caso de que no, enviar mensaje de error
+        NOTA: De momento, no se preocupen por la parte de validación de roles o inicio de sesión, esto se cubrirá en el futuro.
+        
+                                        /api/v1/repairs <br>
+        HTTP VERB
+        URL
+        Descripción
+        GET
+        /
+        Obtener la lista de equipos pendientes (pending) de reparar
+        GET
+        /:id
+        Obtener un equipo pendiente de reparar por su id
+        POST
+        /
+        Crear una cita, se debe incluir en el req.body lo siguiente (date, userId) El userId siendo el id del usuario quien solicita la reparación.
+        PATCH
+        /:id
+        Actualizar el status de una reparación ha completado (cambiar status a completed)
+        DELETE
+        /:id
+        Cancelar la reparación de un usuario (cambiar status a cancelled)
+        
+         Para los endpoints con /:id, se debe validar que el servicio exista con status pending, en caso de que no, enviar mensaje de error.
+        
+        </h4>
+    </header>
+</body>
+</html>
